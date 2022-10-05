@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><h1>Giá hoa quả</h1></div>
+    <div>
+        <select id="check1" style="width: 250px; height: 30px; font-size: 20px;">
+            <option value="Oi">Ổi</option>
+            <option value="Dua hau">Dưa hấu</option>
+            <option value="Mang cut" selected>Măng cụt</option>
+            <option value="Tao">Táo</option>
+            <option value="Xoai">Xoài</option>
+            <option value="Cam">Cam</option>
+            <option value="Chom chom">Chôm chôm</option>
+        </select>
+        <input type="button"  onclick="check()" value="Xem giá" style="height: 30px; margin-left: 10px; font-size: 20px;">
+    </div>
+    <script>
+        function check(){
+            let a = document.getElementById('check1').value
+            switch(a){
+                case 'Oi': document.getElementById('result').innerHTML = '20000 VNĐ/kg' ; break;
+                case 'Dua hau': document.getElementById('result').innerHTML = '20000 VNĐ/kg' ; break;
+                case 'Mang cut': document.getElementById('result').innerHTML = '50000 VNĐ/kg' ; break;
+                case 'Tao': document.getElementById('result').innerHTML = '30000 VNĐ/kg' ; break;
+                case 'Xoai': document.getElementById('result').innerHTML = '30000 VNĐ/kg' ; break;
+                case 'Cam': document.getElementById('result').innerHTML = '40000 VNĐ/kg' ; break;
+                case 'Chom chom': document.getElementById('result').innerHTML = '40000 VNĐ/kg' ; break;
+            }
+        }
+    </script>
+    <h2 id="result"></h2>
+</body>
+</html>
