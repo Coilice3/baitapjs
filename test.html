@@ -8,14 +8,14 @@
 </head>
 <body>
     <script>
-        let number = 5;
-        number++;
-        if (number++ > 5) {
-            number += 1;
-        } else {
-        number -= 1;
-    }
-console.log(number);
+        let n = +prompt("Nhap n: "), arr = [], sum = 0
+        for(let i = 0; i <= n; i++){
+            arr[i] = +prompt(" " + (i + 1))
+            if(arr[i] % 3 == 0){
+                sum += arr[i]
+            }
+        }
+        alert(sum)
     </script>
 </body>
 </html>
