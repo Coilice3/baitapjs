@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <h1>Bảng đo BMI</h1>
+    <div style="display: flex">
+        <div>
+            <p>Cân nặng</p>
+            <p>Chiều cao</p>
+        </div>
+        <div>
+            <p><input type="text" id="weight" size="10">kg</p>
+            <p><input type="text" id="height" size="10">cm</p>
+        </div>
+    </div>
+    <p><input type="button" value="Kết quả" onclick="bmiCalcul()" style="width: 90px; height: 30px"></p>
+    <h2 id="kq"></h2>
+    <script>
+        function bmiCalcul(){
+            let w = +document.getElementById('weight').value
+            let h = +document.getElementById('height').value / 100
+            let result = w / (h * h)
+            if(result < 16){
+                document.getElementById('kq').innerHTML = "Gầy độ III"
+            }else if(result >= 16 && result < 17){
+                document.getElementById('kq').innerHTML = "Gầy độ II"
+            }else if(result >= 17 && result < 18.5){
+                document.getElementById('kq').innerHTML = "Gầy độ I"
+            }else if(result >= 18.5 && result < 25){
+                document.getElementById('kq').innerHTML = "Bình thường"
+            }else if(result >= 25 && result < 30){
+                document.getElementById('kq').innerHTML = "Thừa cân"
+            }else if(result >= 30 && result < 35){
+                document.getElementById('kq').innerHTML = "Béo phì độ I"
+            }else if(result >= 35 && result < 40){
+                document.getElementById('kq').innerHTML = "Béo phì độ II"
+            }else
+                document.getElementById('kq').innerHTML = "Béo phì độ III"
+        }
+    </script>
+</body>
+</html>
