@@ -8,14 +8,45 @@
 </head>
 <body>
     <script>
-        let n = +prompt("Nhap n: "), arr = [], sum = 0
-        for(let i = 0; i <= n; i++){
-            arr[i] = +prompt(" " + (i + 1))
-            if(arr[i] % 3 == 0){
-                sum += arr[i]
+        let chu = ['Mươi', 'Mốt', 'Hai', 'Ba', 'Bốn', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín'];
+        let so = +prompt("Nhập vào: ");
+        let kq = ''
+        if (so < 10) {
+            switch (so) {
+                case 0:
+                    kq += "Không";
+                    break;
+                case 1:
+                    kq += "Một";
+                    break;
+                default:
+                    kq += chu[so]
             }
+        } else if (so < 20) {
+            kq += 'Mười '
+            switch (so % 10) {
+                case 0:
+                    kq += '';
+                    break;
+                case 1:
+                    kq += "Một";
+                    break;
+                case 5:
+                    kq += "Lăm";
+                    break;
+                default:
+                    kq += chu[so % 10]
+            }
+        } else {
+            let hangChuc = parseInt(so / 10);
+            let hangDV = so % 10;
+            kq = chu[hangChuc] + ' mươi '
+            if(hangDV == 0){
+                kq += ''
+            }else
+                kq += chu[hangDV]
         }
-        alert(sum)
+        alert(kq)
     </script>
 </body>
 </html>
