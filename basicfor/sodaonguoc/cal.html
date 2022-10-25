@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Nhap so </h2>
+    <input type="text" id="input">
+    <button onclick="result()">Click</button>
+    <p id="kq"></p>
+    <script>
+        function result(){
+            let n = +document.getElementById('input').value 
+            document.getElementById('kq').innerHTML= cal(n)
+        }
+        function cal(n){
+            let digit, result = 0
+            while(n > 0){
+                digit = n % 10
+                result = result * 10 + digit
+                n = parseInt(n / 10)
+            }
+            return result
+        }
+    </script>
+</body>
+</html>
