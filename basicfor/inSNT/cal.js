@@ -12,10 +12,16 @@ function isPrime(n){
         return result
     }
 }
-let number = 20
-for(let i = 0; i <= number; i++){
+let count = 0
+for(let i = 0; i <= 100; i++){
     let c = isPrime(i)
     if(c){
-        document.write(' ' + i)
+        count++
+        if(count <= 20){
+            document.write(' ' + i)
+        }
     }
 }
+
+
+    
